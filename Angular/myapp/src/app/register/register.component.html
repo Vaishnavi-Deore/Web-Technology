@@ -1,0 +1,61 @@
+<h2>Register</h2>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <label>Name:</label>
+  <input type="text" formControlName="name">
+
+  <label>Email:</label>
+  <input type="email" formControlName="email">
+
+  <label>Mobile:</label>
+  <input type="text" formControlName="mobile">
+
+  <!-- Added Fields -->
+
+  <label>Date of Birth:</label>
+  <input type="date" formControlName="dob">
+
+  <label>Gender:</label>
+  <select formControlName="gender">
+    <option value="">Select Gender</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label>Address:</label>
+  <input type="text" formControlName="address">
+
+  <label>City:</label>
+  <input type="text" formControlName="city">
+
+  <label>State:</label>
+  <input type="text" formControlName="state">
+
+  <label>Pincode:</label>
+  <input type="text" formControlName="pincode">
+
+  <!-- Existing Password Fields -->
+
+  <label>Password:</label>
+  <input type="password" formControlName="password">
+
+  <label>Confirm Password:</label>
+  <input type="password" formControlName="confirmPassword">
+
+  <div *ngIf="registerForm.errors?.['mismatch']">
+    ⚠ Passwords do not match
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">
+    Register
+  </button>
+
+</form>
+
+<br>
+
+<button type="button" (click)="goToLogin()">
+  Already have an account? Login
+</button>
