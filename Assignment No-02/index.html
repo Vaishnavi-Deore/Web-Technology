@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BookVerse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f6fb;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 60px;
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+nav h2{
+    color:white;
+}
+
+nav a{
+    color:white;
+    margin-left:30px;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#ffcc70;
+}
+
+/* HERO */
+#home{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+#home h1{
+    font-size:50px;
+}
+
+#home p{
+    margin-top:20px;
+    max-width:700px;
+    font-size:18px;
+}
+
+/* SECTION */
+section{
+    padding:100px 80px;
+}
+
+/* BOOKS */
+#books h1{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:36px;
+    color:#1d2671;
+}
+
+.books{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:35px;
+}
+
+.book{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book:hover{
+    transform:translateY(-12px);
+}
+
+.book img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.book h3{
+    margin-top:12px;
+    color:#c33764;
+}
+
+.book p{
+    color:#555;
+    font-size:14px;
+}
+
+/* INFO PANEL */
+.info-panel{
+    margin-top:60px;
+    max-width:950px;
+    margin-left:auto;
+    margin-right:auto;
+    background:linear-gradient(to right,#1d2671,#c33764);
+    color:white;
+    padding:35px;
+    border-radius:25px;
+    display:flex;
+    gap:30px;
+    align-items:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.info-panel img{
+    width:200px;
+    border-radius:15px;
+}
+
+.tag{
+    display:inline-block;
+    margin:10px 0;
+    padding:6px 16px;
+    background:#ffcc70;
+    color:black;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* CONTACT */
+#contact{
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+input,textarea{
+    width:320px;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:8px;
+}
+
+button{
+    padding:12px 30px;
+    background:#ffcc70;
+    border:none;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+footer{
+    background:black;
+    color:#aaa;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Feel Like a Heaven</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <div>
+        <h1>Discover Books That Shape Your Mind</h1>
+        <p>Explore the world’s most influential books — knowledge, focus, growth.</p>
+    </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books">
+<h1>Popular Books</h1>
+
+<div class="books">
+
+<div class="book" onclick="showBook('alchemist')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg">
+<h3>The Alchemist</h3><p>Fiction</p></div>
+
+<div class="book" onclick="showBook('atomic')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg">
+<h3>Atomic Habits</h3><p>Self Growth</p></div>
+
+<div class="book" onclick="showBook('clean')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL.jpg">
+<h3>Clean Code</h3><p>Programming</p></div>
+
+<div class="book" onclick="showBook('deep')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/81JJ7fyyKyS.jpg">
+<h3>Deep Work</h3><p>Productivity</p></div>
+
+<div class="book" onclick="showBook('think')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/71KilybDOoL.jpg">
+<h3>Think Like a Monk</h3><p>Mindfulness</p></div>
+
+<div class="book" onclick="showBook('rich')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/81bsw6fnUiL.jpg">
+<h3>Rich Dad Poor Dad</h3><p>Finance</p></div>
+
+<div class="book" onclick="showBook('power')">
+<img src="https://images-na.ssl-images-amazon.com/images/I/71aG+xDKSYL.jpg">
+<h3>The Power of Now</h3><p>Spiritual</p></div>
+
+<div class="book" onclick="showBook('psychology')">
+<img src="http://prodimage.images-bn.com/pimages/9781804090114_p0_v2_s1200x630.jpg">
+<h3>Psychology of Money</h3><p>Finance</p></div>
+
+<div class="book" onclick="showBook('secret')">
+<img src="https://tse3.mm.bing.net/th/id/OIP.OBiWOnshA4QAOw8KxKgVhQHaJm?pid=Api&P=0&h=180">
+<h3>The Secret</h3><p>Secret</p></div>
+
+<div class="book" onclick="showBook('manifestation')">
+<img src="https://sanet.pics/storage-10/0624/th_17dANrU3zQrxdDWYyWF14ZGPfYmlTbLm.jpg">
+<h3>Power Of Manifestation</h3><p>Manifestation</p></div>
+
+</div>
+
+<!-- INFO PANEL -->
+<div class="info-panel">
+<img id="infoImg" src="https://images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg">
+<div>
+<h2 id="infoTitle">Click a book to explore</h2>
+<span class="tag" id="infoTag">Book Category</span>
+<p id="infoDesc">Short, powerful insight will appear instantly here.</p>
+</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h1>Contact Us</h1>
+<input placeholder="Your Name"><br>
+<input placeholder="Your Email"><br>
+<textarea placeholder="Message"></textarea><br>
+<button>Send Message</button>
+</section>
+
+<footer>© 2026 Feel Like a Heaven | Made with ❤️ by Vaishnavi Deore</footer>
+
+<script>
+function showBook(book){
+const b={
+alchemist:["https://images-na.ssl-images-amazon.com/images/I/71aFt4+OTOL.jpg","The Alchemist","✨ Fiction","Follow your dreams and destiny."],
+atomic:["https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg","Atomic Habits","🔥 Self Growth","Tiny habits, massive success."],
+clean:["https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL.jpg","Clean Code","💻 Programming","Write readable, professional code."],
+deep:["https://images-na.ssl-images-amazon.com/images/I/81JJ7fyyKyS.jpg","Deep Work","🎯 Focus","Master concentration in a distracted world."],
+think:["https://images-na.ssl-images-amazon.com/images/I/71KilybDOoL.jpg","Think Like a Monk","🧘 Mindfulness","Train your mind for peace & clarity."],
+rich:["https://images-na.ssl-images-amazon.com/images/I/81bsw6fnUiL.jpg","Rich Dad Poor Dad","💰 Finance","Change how you think about money."],
+power:["https://images-na.ssl-images-amazon.com/images/I/71aG+xDKSYL.jpg","The Power of Now","🌿 Spiritual","Live fully in the present moment."],
+psychology:["https://images-na.ssl-images-amazon.com/images/I/71w0GQyVJxL.jpg","Psychology of Money","📊 Finance","Understand money behavior."],
+secret:["https://tse3.mm.bing.net/th/id/OIP.OBiWOnshA4QAOw8KxKgVhQHaJm?pid=Api&P=0&h=180","The Secret","🔮 Secret"],
+manifestation:["https://sanet.pics/storage-10/0624/th_17dANrU3zQrxdDWYyWF14ZGPfYmlTbLm.jpg","Power Of Manifestation","✨ Manifestation","Unlock the power of manifestation."],
+};
+infoImg.src=b[book][0];
+infoTitle.innerText=b[book][1];
+infoTag.innerText=b[book][2];
+infoDesc.innerText=b[book][3];
+}
+</script>
+
+</body>
+</html>
